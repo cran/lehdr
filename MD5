@@ -1,0 +1,14 @@
+3bcb0041223b68ef9a48885192c56314 *DESCRIPTION
+70500333643febf9c0896b702792f657 *LICENSE
+68621917db39b3f16a7160d05f13e874 *NAMESPACE
+a1cdd46d902392544d6c590689e9f88a *R/get_qwi.R
+94a37a22f39244c555fa686df772b258 *R/lehdr.R
+010b538d9c16d1d218d3026ed353e3ea *README.md
+089bb5e23e69778a8cdd004ca9c901b3 *build/vignette.rds
+4849ec7878dd4df754274f9d308c9d62 *inst/doc/getting_started.R
+b61a9b14ad760b5ab403905ce962be39 *inst/doc/getting_started.Rmd
+bdc25e1569c344244663860a4a050548 *inst/doc/getting_started.html
+e7c955e49fb0b5779c7a1f75966ed072 *man/aggregate_lodes_df.Rd
+332e82b645501da4e3846e2acc6b7e10 *man/grab_lodes.Rd
+0bfd59b82e3c0a4613fef0d2fb26268c *tests/test_lehdr.R
+b61a9b14ad760b5ab403905ce962be39 *vignettes/getting_started.Rmd
