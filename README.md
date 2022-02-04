@@ -7,9 +7,19 @@ Maryland Baltimore County; Liming Wang, Portland State University
 
 # lehdr
 
+## Build Status
+
 <!-- badges: start -->
 
-<!-- badges: end -->
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/lehdr)](https://cran.r-project.org/package=lehdr)
+
+[![R-CMD-check](https://github.com/jamgreen/lehdr/workflows/R-CMD-check/badge.svg)](https://github.com/jamgreen/lehdr/actions)
+
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/lehdr)](https://cran.r-project.org/package=lehdr)
+<!-- commenting out travis
+[![Build Status](https://travis-ci.org/jamgreen/lehdr.svg?branch=master)](https://travis-ci.org/jamgreen/lehdr)
+--> <!-- badges: end -->
 
 **lehdr** (pronounced: *lee dur* like a metric *litre*) is an R package
 that allows users to interface with the [Longitudinal and
@@ -36,12 +46,12 @@ devtools::install_github("jamgreen/lehdr")
 
 ## Usage
 
-After loading the library, this first example pulls the Oregon (`state =
-"or"`) 2014 (`year = 2014`), origin-destination (`lodes_type = "od"`),
-all jobs including private primary, secondary, and Federal (`job_type =
-"JT01"`), all jobs across ages, earnings, and industry (`segment =
-"S000"`), aggregated at the Census Tract level rather than the default
-Census Block (`agg_geo = "tract"`).
+After loading the library, this first example pulls the Oregon
+(`state = "or"`) 2014 (`year = 2014`), origin-destination
+(`lodes_type = "od"`), all jobs including private primary, secondary,
+and Federal (`job_type = "JT01"`), all jobs across ages, earnings, and
+industry (`segment = "S000"`), aggregated at the Census Tract level
+rather than the default Census Block (`agg_geo = "tract"`).
 
 ``` r
 library(lehdr)
@@ -105,8 +115,3 @@ allow for easier mapping of LODES data.
 This package would not exist in its current format without the
 inspiration of [Bob Rudis’s](https://rud.is/b/) [lodes
 package](https://github.com/hrbrmstr/lodes)
-
-## Build Status
-
-[![Build
-Status](https://travis-ci.org/jamgreen/lehdr.svg?branch=master)](https://travis-ci.org/jamgreen/lehdr)
