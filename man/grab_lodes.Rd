@@ -7,6 +7,7 @@
 grab_lodes(
   state,
   year,
+  version = c("LODES8", "LODES7", "LODES5"),
   lodes_type = c("od", "rac", "wac"),
   job_type = c("JT00", "JT01", "JT02", "JT03", "JT04", "JT05"),
   segment = c("S000", "SA01", "SA02", "SA03", "SE01", "SE02", "SE03", "SI01", "SI02",
@@ -18,13 +19,22 @@ grab_lodes(
 )
 }
 \arguments{
-\item{state}{US state abbreviation in lower case, can be a vector of states.}
+\item{state}{US state abbreviation in lower case, as character. 
+Can be a vector of states, like c("or","md","tx") for Oregon, Maryland, 
+and Texas.}
 
-\item{year}{year of the lodes data, can be a vector of years.}
+\item{year}{Year of the lodes data, as numerical.
+Can be a vector of years, like c(2014, 2020) for 2014 and 2020.}
 
-\item{lodes_type}{table type, values can be origin-destination ("od"), 
-residential association ("rac"), or workplace association ("wac"). od 
-files give a home and destination census block for workers. Residential 
+\item{version}{The LODES version to use.
+Version 8 (the default, use "LODES8") is enumerated at 2020 Census blocks. 
+"LODES7" is enumerated at 2010 Census blocks, but ends in 2019; 
+LODES5" is enumerated at 2000 Census blocks, but ends in 2009.}
+
+\item{lodes_type}{The LODES table type.
+Values can be the default origin-destination ("od"),residential association
+("rac"), or workplace association ("wac"). 
+od files give a home and destination census block for workers. Residential 
 files give job totals of worker home census blocks and workplace files 
 give job totals of worker job census blocks}
 
@@ -32,23 +42,24 @@ give job totals of worker job census blocks}
 "JT02" for All Private Jobs, "JT03" for Private Primary jobs, "JT04" for
 All Federal jobs, "JT05" for Federal Primary jobs}
 
-\item{segment}{Segment of the workforce: "S000" total number of jobs for
-workers, "SA01" number of jobs for workers aged 29 or younger, "SA02" number
-of jobs for workers aged 30-54,"SA03" number of jobs for workers 55 and
-older, "SE01" number of jobs with earnings $1,250/month or less, "SE02"
-number of jobs with earnings $1,251 to $3,333/month, "SE03" number of jobs
-with earnings greater than $3,333/month, "SI01" number of jobs in Goods
-Producing industry sectors, "SI02" number of jobs in Trade, 
-Transportation, and Utilities industry sectors, "SI03" number of jobs in 
-All Other Services industry sectors}
+\item{segment}{Segment of the workforce.
+"S000" total number of jobs for workers, "SA01" number of jobs for workers 
+aged 29 or younger, "SA02" number of jobs for workers aged 30-54,"SA03" 
+number of jobs for workers 55 and older, "SE01" number of jobs with 
+earnings $1,250/month or less, "SE02" number of jobs with earnings $1,251 
+to $3,333/month, "SE03" number of jobs with earnings greater than 
+$3,333/month, "SI01" number of jobs in Goods Producing industry sectors, 
+"SI02" number of jobs in Trade, Transportation, & Utilities industry 
+sectors, "SI03" number of jobs in All Other Services industry sectors.}
 
 \item{agg_geo}{Aggregate to a geography other than Census Block (default). 
 Values can be "bg" for block group, "tract", "county", or "state".}
 
-\item{state_part}{Part of the state file, can have values of "main" or "aux"
-in OD files. Using "main" includes workers with their workplace and
-residence in the state. Using "aux" includes workers with residences out 
-of state and workplace in the state of interest}
+\item{state_part}{Part of the state file, required for "od" lodes_type.
+Can have values of "main" or "aux" in OD files. Using "main" includes 
+workers with their workplace and residence in the state. Using "aux" 
+includes workers with residences out of state and workplace in the state 
+of interest}
 
 \item{download_dir}{Directory where lodes table will be downloaded.}
 

@@ -22,14 +22,25 @@
 
 ## ----usage1, eval=FALSE-------------------------------------------------------
 #  
-#  or_od <- grab_lodes(state = "or", year = 2014, lodes_type = "od", job_type = "JT01",
-#             segment = "S000", state_part = "main", agg_geo = "tract")
+#  or_od <- grab_lodes(state = "or",
+#                      year = 2020,
+#                      version = "LODES8",
+#                      lodes_type = "od",
+#                      job_type = "JT01",
+#                      segment = "S000",
+#                      state_part = "main",
+#                      agg_geo = "tract")
 #  
 #  head(or_od)
 
 ## ----usage2, eval=FALSE-------------------------------------------------------
-#  or_ri_od <- grab_lodes(state = c("or", "ri"), year = c(2013, 2014), lodes_type = "od", job_type = "JT01",
-#             segment = "S000", state_part = "main", agg_geo = "tract")
+#  or_ri_od <- grab_lodes(state = c("or", "ri"),
+#                         year = c(2013, 2014),
+#                         lodes_type = "od",
+#                         job_type = "JT01",
+#                         segment = "S000",
+#                         state_part = "main",
+#                         agg_geo = "tract")
 #  
 #  head(or_ri_od)
 
@@ -51,30 +62,52 @@
 #  head(md_rac_county)
 
 ## ----example_county_agg2, eval=FALSE------------------------------------------
-#  md_rac_county <- grab_lodes(state = "md", year = 2015, lodes_type = "rac", job_type = "JT01",
-#             segment = "S000", agg_geo = "county")
+#  md_rac_county <- grab_lodes(state = "md",
+#                              year = 2015,
+#                              lodes_type = "rac",
+#                              job_type = "JT01",
+#                              segment = "S000",
+#                              agg_geo = "county")
 #  
 #  head(md_rac_county)
 
 ## ----example_county_agg3, eval=FALSE------------------------------------------
-#  md_od_county <- grab_lodes(state = "md", year = 2015, lodes_type = "od", job_type = "JT01",
-#             segment = "S000", agg_geo = "county", state_part = "main")
+#  md_od_county <- grab_lodes(state = "md",
+#                             year = 2015,
+#                             version="LODES7",
+#                             lodes_type = "od",
+#                             job_type = "JT01",
+#                             segment = "S000",
+#                             agg_geo = "county",
+#                             state_part = "main")
 #  
 #  head(md_od_county)
 
 ## ----example_agg_other, eval=FALSE--------------------------------------------
-#  md_rac_bg <- grab_lodes(state = "md", year = 2015, lodes_type = "rac", job_type = "JT01",
-#             segment = "S000", agg_geo = "bg")
+#  md_rac_bg <- grab_lodes(state = "md",
+#                          year = 2015,
+#                          lodes_type = "rac",
+#                          job_type = "JT01",
+#                          segment = "S000",
+#                          agg_geo = "bg")
 #  
 #  head(md_rac_bg)
 #  
-#  md_rac_tract <- grab_lodes(state = "md", year = 2015, lodes_type = "rac", job_type = "JT01",
-#             segment = "S000", agg_geo = "tract")
+#  md_rac_tract <- grab_lodes(state = "md",
+#                             year = 2015,
+#                             lodes_type = "rac",
+#                             job_type = "JT01",
+#                             segment = "S000",
+#                             agg_geo = "tract")
 #  
 #  head(md_rac_tract)
 #  
-#  md_rac_state <- grab_lodes(state = "md", year = 2015, lodes_type = "rac", job_type = "JT01",
-#             segment = "S000", agg_geo = "state")
+#  md_rac_state <- grab_lodes(state = "md",
+#                             year = 2015,
+#                             lodes_type = "rac",
+#                             job_type = "JT01",
+#                             segment = "S000",
+#                             agg_geo = "state")
 #  
 #  head(md_rac_state)
 
