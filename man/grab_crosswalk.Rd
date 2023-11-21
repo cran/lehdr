@@ -6,7 +6,7 @@
 \usage{
 grab_crosswalk(
   state,
-  download_dir = file.path(rappdirs::user_cache_dir(appname = "lehdr"))
+  download_dir = file.path(tools::R_user_dir("lehdr", which = "cache"))
 )
 }
 \arguments{
@@ -21,12 +21,11 @@ a dataframe (tibble) geographic crosswalk at the block level
 Download LODES geographic crosswalk
 }
 \examples{
-\dontrun{
+\donttest{
 # Download and load current geographic crosswalk for Alaska
 alaska_xwalk <- grab_crosswalk('AK')
 
-# Download and load current geographic crosswalk for New England
-
+# Download and load current geographic crosswalk for New England 
 new_england_xwalk <- grab_crosswalk(c('CT', 'RI', 'MA', 'VT', 'NH', 'ME'))
 
 }

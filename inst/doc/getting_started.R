@@ -14,14 +14,13 @@
 #    }
 #  )
 
-## ---- message=FALSE, warning=FALSE, eval=FALSE--------------------------------
+## ----message=FALSE, warning=FALSE, eval=FALSE---------------------------------
 #  devtools::install_github("jamgreen/lehdr")
 #  library(lehdr)
 #  library(dplyr)
 #  library(stringr)
 
 ## ----usage1, eval=FALSE-------------------------------------------------------
-#  
 #  or_od <- grab_lodes(state = "or",
 #                      year = 2020,
 #                      version = "LODES8",

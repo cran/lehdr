@@ -40,7 +40,7 @@ package.check <- lapply(
 
 # Installation
 
-**lehdr** has not yet been submitted to CRAN so installing using **devtools** is required. Additionally, we'll be using **dplyr**.
+To find the most up-to-date copy of **lehdr** one can use **devtools**. Otherwise you can install the packge through CRAN. Additionally, we'll be using **dplyr**.
 
 ```{r, message=FALSE, warning=FALSE, eval=FALSE}
 devtools::install_github("jamgreen/lehdr")
@@ -53,7 +53,6 @@ library(stringr)
 This first example pulls the Oregon (`state = "or"`) 2020 (`year = 2020`) from LODES version 8 (`version="LODES8"`, default), origin-destination (`lodes_type = "od"`), all jobs including private primary, secondary, and Federal (`job_type = "JT01"`, default), all jobs across ages, earnings, and industry (`segment = "S000"`, default), aggregated at the Census Tract level rather than the default Census Block (`agg_geo = "tract"`).
 
 ```{r usage1, eval=FALSE}
-
 or_od <- grab_lodes(state = "or", 
                     year = 2020, 
                     version = "LODES8", 

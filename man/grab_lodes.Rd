@@ -14,7 +14,8 @@ grab_lodes(
     "SI03"),
   agg_geo = c("block", "bg", "tract", "county", "state"),
   state_part = c("", "main", "aux"),
-  download_dir = file.path(rappdirs::user_cache_dir(appname = "lehdr")),
+  download_dir = normalizePath(file.path(tools::R_user_dir("lehdr", which = "cache")),
+    mustWork = FALSE),
   use_cache = FALSE
 )
 }
@@ -74,7 +75,7 @@ a dataframe (tibble) of block or tract level LODES files
 Download LODES OD, RAC, and WAC tables
 }
 \examples{
-\dontrun{
+\donttest{
  # download and load 2014 block level O-D data for Oregon
  blk_df_or_od <- grab_lodes(state = 'or', year = 2014, lodes_type = "od", job_type = "JT01", 
                          segment = "SA01", state_part = "main")
