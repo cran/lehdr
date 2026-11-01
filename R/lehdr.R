@@ -7,7 +7,7 @@
 #'   Can be a vector of years, like `c(2014, 2020)` for 2014 and 2020.
 #'   Must be between 2002 and 2023.
 #' @param version The LODES version to use. `"LODES8"` (the default) is
-#'   enumerated at 2020 Census blocks and covers 2002-2022. `"LODES7"` is
+#'   enumerated at 2020 Census blocks and covers 2002-2023. `"LODES7"` is
 #'   enumerated at 2010 Census blocks and covers 2002-2019. `"LODES5"` is
 #'   enumerated at 2000 Census blocks and covers 2002-2009.
 #' @param lodes_type The LODES table type. Values can be the default
@@ -182,7 +182,7 @@ grab_lodes <- function(
   # ------------------------------------------------------------------
   # Validate year range
   # ------------------------------------------------------------------
-  year_range <- list(LODES8 = 2002:2022, LODES7 = 2002:2019, LODES5 = 2002:2009)
+  year_range <- list(LODES8 = 2002:2023, LODES7 = 2002:2019, LODES5 = 2002:2009)
   # Use the first element of version for range-checking before arg_match
   ver_check <- toupper(version[1])
   if (!is.na(ver_check) && ver_check %in% names(year_range)) {

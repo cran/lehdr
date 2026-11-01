@@ -240,16 +240,46 @@ test_that("grab_lodes aborts on mixed-case invalid state", {
   )
 })
 
-test_that("grab_lodes aborts when year is out of range for LODES8", {
+# The range check runs before any download, so these tests are offline-safe.
+# 2099 and 2001 are used so the tests do not need editing when new LODES
+# years are released (LODES8 starts in 2002 and currently ends in 2023).
+test_that("grab_lodes aborts when year is above the valid range for LODES8", {
   expect_error(
     grab_lodes(
       state      = "de",
-      year       = 2023,
+      year       = 2099,
       version    = "LODES8",
       lodes_type = "wac"
     ),
     "outside the valid range"
   )
+})
+
+test_that("grab_lodes aborts when year is below the valid range for LODES8", {
+  expect_error(
+    grab_lodes(
+      state      = "de",
+      year       = 2001,
+      version    = "LODES8",
+      lodes_type = "wac"
+    ),
+    "outside the valid range"
+  )
+})
+
+# Regression test for issue #46: LODES8 data for 2023 must be accepted.
+# Test contributed by @stevenpandrews (https://github.com/stevenpandrews) in
+# https://github.com/jamgreen/lehdr/issues/46
+#
+# The expected total matches a manual download of
+# https://lehd.ces.census.gov/data/lodes/LODES8/ma/wac/ma_wac_S000_JT00_2023.csv.gz
+# (sum of C000 = 3637277).
+test_that("grab_lodes accepts year 2023 for LODES8 and matches the published WAC total", {
+  withr::local_options(list(lehdr_use_cache = TRUE))
+
+  ma_wac <- grab_lodes(state = "ma", year = 2023, lodes_type = "wac")
+
+  expect_equal(sum(ma_wac$C000), 3637277)
 })
 
 test_that("grab_lodes aborts when year is out of range for LODES5", {

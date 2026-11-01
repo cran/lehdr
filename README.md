@@ -157,8 +157,8 @@ plot(or_od_geo["h_geometry"], lwd = 0.25, add = TRUE)
 ```
 
 The optional `version` parameter selects the LODES vintage. LODES8
-(default) uses 2020 Census blocks. LODES7 uses 2010 Census blocks and
-ends in 2019. LODES5 uses 2000 Census blocks and ends in 2009.
+(default) uses 2020 Census blocks and covers 2002-2023. LODES7 uses
+2010 Census blocks and ends in 2019. LODES5 uses 2000 Census blocks and ends in 2009.
 
 ## Analytical Functions
 
@@ -329,9 +329,9 @@ If you use **lehdr** in published work, please cite it:
 citation("lehdr")
 ```
 
-Green, Jamaal, Liming Wang, and Dillon Mahmoudi. 2025. “lehdr: Grab
+Green, Jamaal, Liming Wang, and Dillon Mahmoudi. 2026. “lehdr: Grab
 Longitudinal Employer-Household Dynamics (LEHD) Flat Files.” R package
-version 1.2.0. <https://github.com/jamgreen/lehdr/>
+version 1.2.1. <https://github.com/jamgreen/lehdr/>
 
 ## Acknowledgements
 
